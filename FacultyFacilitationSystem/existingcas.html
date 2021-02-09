@@ -1,0 +1,47 @@
+{% extends 'layout1.html' %}
+{% block body %}
+<br/>
+  <h3 align='center'>Index Points for Journals/ Conferences and Institution Points w.r.t Organization</h3>
+<table border='1' align='center'>
+<tr>
+  <th>UGC</th>
+  <th>,Scopus</th>
+  <th>SCI</th>
+  <th>Others</th>
+  <th>IIT</th>
+  <th>IIIT</th>
+  <th>NIT</th>
+  <th>Universities</th>
+  <th>Deemed Universities</th>
+  <th>Private Universities</th>
+  <th>Others</th>
+</tr>
+{% for i in range (0,clen) %}
+    <tr>
+     <td>{{i+1}}</td>
+    <td>{{y[i][1]}}</td>
+    <td>{{y[i][2]}}</td>
+    <td>{{y[i][3]}}</td>
+    <td>{{y[i][4]}}</td>
+    <td>{{y[i][5]}}</td>
+    <td>{{y[i][6]}}</td>
+    <td>{{y[i][7]}}</td>
+    <td>{{y[i][8]}}</td>
+    <td>{{y[i][9]}}</td>
+    <td>{{y[i][10]}}</td>
+    <td>{{y[i][11]}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br/>
+<br/>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class=flashes>
+{% for message in messages %}
+  <center><li>{{ message }}</li></center>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+{% endblock %}
